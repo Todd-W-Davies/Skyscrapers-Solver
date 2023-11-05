@@ -1,8 +1,8 @@
-import streamlit as st
-
 from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
+
+import streamlit as st
 
 from ortools.sat.python import cp_model
 
