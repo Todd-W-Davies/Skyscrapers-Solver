@@ -140,12 +140,12 @@ def main():
     def on_solution_callback(self):
         self._solution_count += 1
         st.write(f"Solution {self._solution_count}")
-        solution_array = np.empty([n,n])
+        self._solution_array = np.empty([n,n])
         for i in rows:
           for i in cols:
-            solution_array[i][j] = self.Value(self._grid[(i,j)])
+            self._solution_array[i][j] = self.Value(self._grid[(i,j)])
 
-        df = pd.DataFrame(solution_array, columns = ["col" + f"{i}" for i in range(n)])
+        df = pd.DataFrame(self._solution_array, columns = ["col" + f"{i}" for i in range(n)])
         st.write(df)
 
         if self._solution_count >= self._solution_limit:
