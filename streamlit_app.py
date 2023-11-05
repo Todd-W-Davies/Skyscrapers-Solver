@@ -138,13 +138,12 @@ def main():
     def on_solution_callback(self):
         self._solution_count += 1
         st.write(f"Solution {self._solution_count}")
-        solution_dict = {}
-        for j in cols:
-          solution_dict[j] = []
-          for i in rows:
-            solution_dict[j] = self.Value(self._grid[(i,j)])
+        solution_array = np.empty([n,n])
+        for i in rows:
+          for i in cols:
+            solution_array[i][j] = self.Value(self._grid[(i,j)])
 
-        df = pd.DataFrame(solution_dict)
+        df = pd.DataFrame(solution array, columns = ["col" + i for i in range(n)])
         components.html(df.to_html(header=False, index=False))
 
         if self._solution_count >= self._solution_limit:
