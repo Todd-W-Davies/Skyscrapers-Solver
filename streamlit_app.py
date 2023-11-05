@@ -146,7 +146,7 @@ def main():
             solution_array[i][j] = self.Value(self._grid[(i,j)])
 
         df = pd.DataFrame(solution_array, columns = ["col" + f"{i}" for i in range(n)])
-        components.html(df.to_html(header=False, index=False))
+        st.write(df)
 
         if self._solution_count >= self._solution_limit:
             st.write(f"Stop search after {self._solution_limit} solutions")
