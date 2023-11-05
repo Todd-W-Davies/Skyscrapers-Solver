@@ -1,4 +1,4 @@
-pip install ortools
+!pip install ortools
 
 import streamlit as st
 
