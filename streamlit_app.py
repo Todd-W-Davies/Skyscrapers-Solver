@@ -10,13 +10,13 @@ from ortools.sat.python import cp_model
 n = 5
 
 outer_inputs = {
-    "top": [2,0,3,0,0],
-    "left": [0,3,0,0,0],
-    "right": [0,0,0,0,3],
-    "bottom": [2,0,2,4,3]
+    "top": [0,0,0,3,3],
+    "left": [0,0,3,4,3],
+    "right": [0,0,2,0,0],
+    "bottom": [3,4,0,0,2]
     }
 
-grid_inputs = [[2,0,2]]
+grid_inputs = []
 
 
 def set_up_booleans(n, model, grid, visible, blocking, angle):
