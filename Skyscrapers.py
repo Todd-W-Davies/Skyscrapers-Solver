@@ -151,7 +151,7 @@ def main():
           st.write(row_sep)
 
         if self._solution_count >= self._solution_limit:
-            st.writef"Stop search after {self._solution_limit} solutions")
+            st.write(f"Stop search after {self._solution_limit} solutions")
             self.StopSearch()
 
     def solution_count(self):
