@@ -140,7 +140,7 @@ def main():
     def on_solution_callback(self):
         self._solution_count += 1
         st.write(f"Solution {self._solution_count}")
-        self._solution_array = [[0] * n] * n
+        self._solution_array = np.empty([n,n])
         for i in rows:
           for j in cols:
             self._solution_array[i][j] = self.Value(self._grid[(i,j)])
