@@ -144,7 +144,7 @@ def main():
           for i in cols:
             solution_array[i][j] = self.Value(self._grid[(i,j)])
 
-        df = pd.DataFrame(solution_array, columns = ["col" + i for i in range(n)])
+        df = pd.DataFrame(solution_array, columns = ["col" + f"{i}" for i in range(n)])
         components.html(df.to_html(header=False, index=False))
 
         if self._solution_count >= self._solution_limit:
