@@ -1,5 +1,3 @@
-!pip install ortools
-
 import streamlit as st
 
 from ortools.sat.python import cp_model
