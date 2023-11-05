@@ -137,14 +137,14 @@ def main():
     def on_solution_callback(self):
         self._solution_count += 1
         st.write(f"Solution {self._solution_count}")
-        row_sep = "+" + "---+"*self._n
-        st.write(row_sep)
-        for i in rows:
-          str_out = "| "
-          for j in cols:
-            str_out += f"{self.Value(self._grid[(i,j)])} | "
-          st.write(str_out)
-          st.write(row_sep)
+        solution_dict = {}
+        for j in cols:
+          solution_dict[j] = []
+          for i in rows:
+            solution_dict[j] = self.Value(self._grid[(i,j)])
+
+        df = pd.DataFrame(solution_dict)
+        components.html(df.to_html(header=False, index=False))
 
         if self._solution_count >= self._solution_limit:
             st.write(f"Stop search after {self._solution_limit} solutions")
