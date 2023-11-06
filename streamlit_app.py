@@ -190,6 +190,8 @@ def main():
             for i in rows:
                 self._solution_array[j][i] = self.Value(self._grid[(i,j)])
 
+        st.write(self._solution_array)
+
         df = pd.DataFrame(self._solution_array)
         st.markdown(
             df.style.set_properties(
