@@ -52,15 +52,17 @@ with col3:
 with col2:
     edited_bottom = st.data_editor(input_bottom, key = 4, hide_index=True)
 
-
-outer_inputs = {
-    "top": [0,0,0,3,3],
-    "left": [0,0,3,4,3],
-    "right": [0,0,2,0,0],
-    "bottom": [3,4,0,0,2]
+if st.button('Submit'):
+    outer_inputs = {
+        "top": edited_top.loc[0,].values.flatten().tolist(),
+        "left": edited_left.loc[,0].tolist(),
+        "right": edited_right.loc[,0].tolist(),
+        "bottom": edited_bottom.loc[0,].values.flatten().tolist()
     }
 
-grid_inputs = []
+    grid_inputs = []
+)
+
 
 
 def set_up_booleans(n, model, grid, visible, blocking, angle):
