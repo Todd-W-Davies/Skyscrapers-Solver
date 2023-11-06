@@ -61,7 +61,6 @@ if st.button('Submit'):
     }
 
     grid_inputs = []
-)
 
 
 
