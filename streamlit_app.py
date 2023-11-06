@@ -8,6 +8,50 @@ from ortools.sat.python import cp_model
 """Take input for given values outside and inside grid"""
 
 n = 5
+grid = {}
+top = {}
+bottom = {}
+for i in range(n):
+    grid[i] = [None]*n
+    top[i] = [None]
+    bottom[i] = [None]
+
+
+left = {0: [None]*n}
+right = {0: [None]*n}
+
+input_grid = pd.DataFrame(grid)
+input_grid = input_grid.fillna(0)  # fill with zeros
+input_top = pd.DataFrame(top)
+input_top = input_top.fillna(0)  # fill with zeros
+input_left = pd.DataFrame(left)
+input_left = input_left.fillna(0)  # fill with zeros
+input_right = pd.DataFrame(right)
+input_right = input_right.fillna(0)  # fill with zeros
+input_bottom = pd.DataFrame(bottom)
+input_bottom = input_bottom.fillna(0)  # fill with zeros
+
+
+col1, col2, col3 = st.columns([1,n,1])
+
+with col2:
+    edited_top = st.data_editor(input_top, key = 1, hide_index=True)
+
+col1, col2, col3 = st.columns([1,n,1])
+
+st.write("Input your data below:")
+with col1:
+    edited_left = st.data_editor(input_left, key = 2, hide_index=True)
+
+with col2:
+    edited_grid = st.data_editor(input_grid, key = 0, hide_index=True)
+
+with col3:
+    edited_right = st.data_editor(input_right, key = 3, hide_index=True)
+
+with col2:
+    edited_bottom = st.data_editor(input_bottom, key = 4, hide_index=True)
+
 
 outer_inputs = {
     "top": [0,0,0,3,3],
