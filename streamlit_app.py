@@ -190,7 +190,7 @@ def main():
             for i in rows:
                 self._solution_array[j][i] = self.Value(self._grid[(i,j)])
 
-        df = pd.DataFrame(self._solution_array, columns = ["col" + f"{i}" for i in range(n)])
+        df = pd.DataFrame(self._solution_array)
         st.markdown(
             df.style.set_properties(
                 **{'color': '#000000',
