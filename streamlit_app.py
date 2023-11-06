@@ -186,7 +186,7 @@ def main():
         st.write(f"Solution {self._solution_count}")
         self._solution_array = {}
         for j in cols:
-            self._dolution_array[j] = [None]*n
+            self._solution_array[j] = [None]*n
             for i in rows:
                 self._solution_array[j][i] = self.Value(self._grid[(i,j)])
 
