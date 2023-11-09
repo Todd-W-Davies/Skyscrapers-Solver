@@ -44,7 +44,7 @@ with col1:
     edited_left = st.data_editor(input_left, key = 0, hide_index=True)
 
 with col2:
-    edited_grid = st.data_editor(input_grid, key = 0, hide_index=True)
+    edited_grid = st.data_editor(input_grid, key = 2, hide_index=True)
 
 with col3:
     edited_right = st.data_editor(input_right, key = 3, hide_index=True)
