@@ -65,8 +65,7 @@ if st.button('Submit'):
     for i in range(n):
         for j in range(n):
             if edited_grid.iloc[i,j] != 0:
-                
-    grid_inputs += [[i,j,edited_grid.iloc[i,j]]]
+                grid_inputs += [[i,j,edited_grid.iloc[i,j]]]
 
 
 
