@@ -41,7 +41,7 @@ col1, col2, col3 = st.columns([1,n,1])
 
 st.write("Input your data below:")
 with col1:
-    edited_left = st.data_editor(input_left, key = 2, hide_index=True)
+    edited_left = st.data_editor(input_left, key = 0, hide_index=True)
 
 with col2:
     edited_grid = st.data_editor(input_grid, key = 0, hide_index=True)
@@ -55,8 +55,8 @@ with col2:
 if st.button('Submit'):
     outer_inputs = {
         "top": edited_top.loc[0,].values.flatten().tolist(),
-        "left": edited_left[,0].tolist(),
-        "right": edited_right[,0].tolist(),
+        "left": edited_left.loc[:,0].tolist(),
+        "right": edited_right.loc[:,0].tolist(),
         "bottom": edited_bottom.loc[0,].values.flatten().tolist()
     }
 
