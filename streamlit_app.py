@@ -55,8 +55,8 @@ with col2:
 if st.button('Submit'):
     outer_inputs = {
         "top": edited_top.loc[0,].values.flatten().tolist(),
-        "left": edited_left.loc[:,0].tolist(),
-        "right": edited_right.loc[:,0].tolist(),
+        "left": edited_left.loc[:,0].values.flatten().tolist(),
+        "right": edited_right.loc[:,0].values.flatten().tolist(),
         "bottom": edited_bottom.loc[0,].values.flatten().tolist()
     }
 
